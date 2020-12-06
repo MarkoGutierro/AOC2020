@@ -1,0 +1,188 @@
+package com.mycompany.customcustoms_aoc_2020day6;
+
+import java.io.FileNotFoundException; //needed for filenotfoundexception class
+import java.io.File; //needed for file class
+import java.util.Scanner; //needed for scanner class
+import java.util.Arrays; //needed for array class
+import java.util.HashSet; //needed for hashset class
+
+//for each group, count the unique characters. (pulled from file)
+public class Main {
+    public static void main(String[] args) throws FileNotFoundException {
+        //initialize vars
+        int sum = 0; //total of unique characters
+        String currentString; //line in file currently being viewed
+        String[] answersArr = {}; //array with every passenger array
+        String[] currentGroupArr = {}; //array reset with each group's answers
+        
+        //create set object, used later on to remove duplicates from array
+        HashSet<String> set = new HashSet<String>(); 
+        
+        //create file object
+        File file = new File("/Users/marko/OneDrive/Desktop/PassengerAnswers.txt");
+        
+        //create scanner object - scans file
+        Scanner scan = new Scanner(file);
+        
+        //turn the text file into an array
+        while(scan.hasNextLine()){
+            //increase size of array by 1 to accomodate for new value 
+            answersArr = Arrays.copyOf(answersArr, answersArr.length + 1);
+            
+            //create temporary string value that holds the value of the file's current line
+            currentString = scan.nextLine();
+            
+            //put temporary string value into array
+            answersArr[answersArr.length - 1] = currentString; 
+            
+            //print string value just placed in array
+            //System.out.println(answersArr[answersArr.length -1]);
+        }
+        
+        //place a 1 at the end of the array
+        answersArr = Arrays.copyOf(answersArr, answersArr.length + 1);
+        answersArr[answersArr.length - 1] = "1"; 
+        //System.out.println(answersArr[answersArr.length -1]);
+        
+        //place a 1 in inbetween each group
+        for(int i = 0; i < answersArr.length; i++){
+            if(answersArr[i].equals("")){
+                answersArr[i] = "1";
+            }
+        }
+        
+        //print array filled with values from file
+        //System.out.println(Arrays.toString(answersArr));
+
+        //go through the array of all passenger answers
+        for(int i = 0; i < answersArr.length; i++){
+            //go through each character of each passenger answer
+            for(int j = 0; j < answersArr[i].length(); j++){
+                //find out what letter the passenger put down and put it in an array
+                //for their group
+                switch(answersArr[i].substring(j, j+1)){
+                    case "a":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "a"; 
+                        break;
+                    case "b":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "b"; 
+                        break;
+                    case "c":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "c"; 
+                        break;
+                    case "d":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "d"; 
+                        break;
+                    case "e":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "e"; 
+                        break;
+                    case "f":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "f"; 
+                        break;
+                    case "g":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "g"; 
+                        break;
+                    case "h":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "h"; 
+                        break;
+                    case "i":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "i"; 
+                        break;
+                    case "j":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "j"; 
+                        break;
+                    case "k":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "k"; 
+                        break;
+                    case "l":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "l"; 
+                        break;
+                    case "m":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "m"; 
+                        break;
+                    case "n":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "n"; 
+                        break;
+                    case "o":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "o"; 
+                        break;
+                    case "p":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "p"; 
+                        break;
+                    case "q":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "q"; 
+                        break;
+                    case "r":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "r"; 
+                        break;
+                    case "s":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "s"; 
+                        break;
+                    case "t":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "t"; 
+                        break;
+                    case "u":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "u"; 
+                        break;
+                    case "v":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "v"; 
+                        break;
+                    case "w":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "w"; 
+                        break;
+                    case "x":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "x"; 
+                        break;
+                    case "y":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "y"; 
+                        break;
+                    case "z":
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, currentGroupArr.length + 1);
+                        currentGroupArr[currentGroupArr.length - 1] = "z"; 
+                        break;
+                    //runs when a 1 is found, the current group has no more answers to process
+                    default:
+                        //add all values from group's array to a set (no duplicate answers)
+                        for(int k = 0; k < currentGroupArr.length; k++){
+                            set.add(currentGroupArr[k]);
+                        }
+                        //System.out.println(set);
+                        
+                        //The sum of unique answers from all groups increases with the current group's answers
+                        sum += set.size();
+                        
+                        //reset current group array and the set
+                        currentGroupArr = Arrays.copyOf(currentGroupArr, 0);
+                        set.clear(); 
+                } 
+            }
+        }
+        //prints the sum of unique answers from all groups
+        System.out.println("Sum of Counts: " + sum);
+    }
+}
